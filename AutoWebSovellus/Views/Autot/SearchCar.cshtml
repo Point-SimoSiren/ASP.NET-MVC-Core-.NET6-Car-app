@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AutoWebSovellus.Models.Autot>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Merkki)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Malli)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vuosimalli)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rekisterinumero)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Merkki)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Malli)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vuosimalli)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rekisterinumero)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AutoId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.AutoId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AutoId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,49 @@
+﻿@model AutoWebSovellus.Models.Autot
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Autot</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AutoId" />
+            <div class="form-group">
+                <label asp-for="Merkki" class="control-label"></label>
+                <input asp-for="Merkki" class="form-control" />
+                <span asp-validation-for="Merkki" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Malli" class="control-label"></label>
+                <input asp-for="Malli" class="form-control" />
+                <span asp-validation-for="Malli" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vuosimalli" class="control-label"></label>
+                <input asp-for="Vuosimalli" class="form-control" />
+                <span asp-validation-for="Vuosimalli" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rekisterinumero" class="control-label"></label>
+                <input asp-for="Rekisterinumero" class="form-control" />
+                <span asp-validation-for="Rekisterinumero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
